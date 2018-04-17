@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// Programa desenvolvido por Cristiano Teixeira                          //
+// Programa desenvolvido por Cristiano Teixeira        PARADO o Desenv?  //
 ///////////////////////////////////////////////////////////////////////////
 //                                                                       //
 // Baseado em dois motores DC                                            //
