@@ -4,7 +4,7 @@
 //                                                                       //
 // Baseado em dois motores DC                                            //
 // Com uso de Bibliotecas.                                               //
-// Utilizando: Ponte H, HC-06                                            //
+// Utilizando: Ponte H, HC-06                          //
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
@@ -17,7 +17,6 @@ void  ViraDireita();
 void  ViraEsquerda();
 void  Zerinho();
 void  Circulo();
-void  Auto();
 //////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
@@ -76,7 +75,7 @@ void AndaFrente() {
   {
     MotorEsquerda.setSpeed(velocidade+ajuste_vel);
     MotorDireita.setSpeed(velocidade);
-    delay(5);
+    delay(10);
   }
 }
 
@@ -88,7 +87,7 @@ void AndaRe() {
   {
     MotorEsquerda.setSpeed(velocidade+ajuste_vel);
     MotorDireita.setSpeed(velocidade);
-    delay(5);
+    delay(10);
   }
 }  
 
@@ -162,8 +161,41 @@ void loop() {
         ViraEsquerda();
         Serial.println("ESQUERDA");
         break;
-        
+    
+    case 48:
+        if(velocidade>=250){
+        velocidade=100;  
+        }
+        if(velocidade==100){
+        velocidade=150;  
+        }
+        if(velocidade==150){
+        velocidade=200;  
+        }
+        if(velocidade==200){
+        velocidade=250;  
+        }
+        Serial.println("Velocidade");
+        Serial.println(velocidade);
+        break;    
     case 53:
+        Parado();
+        Serial.println("PARADO");
+        break;
+    case 54:
+        Serial.println("VAI-VEM");
+        AndaFrente();
+        delay(500);
+        AndaRe();
+        delay(500);
+        AndaFrente();
+        delay(500);
+        AndaRe();
+        delay(500);
+        Parado();
+        break;
+    
+    case 55:
         Parado();
         Serial.println("PARADO");
         break;
@@ -172,7 +204,11 @@ void loop() {
         Parado();
         Serial.println("ZERINHO");
         break;
-    
+    case 57:
+        velocidade=100;
+        Serial.println("Velocidade");
+        Serial.println(velocidade);
+        break;
     }
 }
 }  
