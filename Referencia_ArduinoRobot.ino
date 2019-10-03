@@ -1,3 +1,6 @@
+//Código utilizado apenas como referência. 
+//Crédito pelo código e licença relativa favor checar o link abaixo   
+
    //////////////////////////////////////////////
   //          Arduino ROBOT v0.1              //
  //                                          //
