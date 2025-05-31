@@ -21,6 +21,12 @@ void setup() {
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
+
+  // ajuste técnico para o bluetooth
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  digitalWrite(2,LOW);
+  digitalWrite(3,HIGH);
   
   // Inicia a comunicação serial (Bluetooth)
   Serial1.begin(9600); // Leonardo usa Serial1 para comunicação com o HC-06
